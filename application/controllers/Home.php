@@ -86,6 +86,55 @@ class Home extends CI_Controller {
         echo $resFile;
     }
 
+    /*
+    //GrabImage
+    //https://quran.kemenag.go.id/page/598
+    function getImage()
+    {
+            //https://quran.kemenag.go.id/cmsq/source/page/598.jpg
+            $arrContextOptions=array(
+                "ssl"=>array(
+                    "verify_peer"=>false,
+                    "verify_peer_name"=>false,
+                ),
+            ); 
+            for($i=1;$i<=604;$i++){ 
+                $data = file_get_contents('https://quran.kemenag.go.id/cmsq/source/page/'.$i.'.jpg',false, stream_context_create($arrContextOptions));
+                @file_put_contents('json/lembar/'.$i.'.jpg', $data);
+            }
+    }
+
+    
+    //GrabAudio
+    //https://cdn.alquran.cloud/media/audio/ayah/ar.alafasy/6236
+    function getAudio()
+    {
+            
+            $arrContextOptions=array(
+                "ssl"=>array(
+                    "verify_peer"=>false,
+                    "verify_peer_name"=>false,
+                ),
+            ); 
+            for($i=5001;$i<=6236;$i++){ 
+                $data = file_get_contents('https://cdn.alquran.cloud/media/audio/ayah/ar.alafasy/'.$i,false, stream_context_create($arrContextOptions));
+                @file_put_contents('json/audio/'.$i.'.mp3', $data);
+            }
+    }
+
+    //Link Share
+    $url = base_url();
+    $namaApp = strtolower('Quran');
+    $noSurah = '1';
+    $noAyat = '1';
+    $arab = '';
+    $tafsir = '';
+    http://www.facebook.com/sharer.php?u='.$url.'surah/'.$noSurah.'/'.$noAyat;
+    https://twitter.com/share?url='.$url.'surah/'.$noSurah.'/'.$noAyat.'&text='.$namaApp.'Q.S '.$noSurah.':'.$noAyat.'&hashtags='.strtolower(str_replace(" ","",$namaApp));
+    https://api.whatsapp.com/send?text='.$namaApp.': Q.S '.$noSurah.':'.$noAyat.' '.$arab.' -'.$tafsir.' '.$url.'surah/'.$noSurah.'/'.$noAyat;
+     */
+    
+
     function getAyatSurat()
     {
         $json = file_get_contents("json/surah/1.json");

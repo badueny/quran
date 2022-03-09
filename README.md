@@ -1,2 +1,2 @@
 # quran
-Al Quran 
+Aplikasi Al Quran 
